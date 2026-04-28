@@ -1,0 +1,273 @@
+/* Basic styling for the body and overall container */
+body {
+    font-family: Arial, sans-serif;
+
+    color: #eee;
+    /* Light text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* Full viewport height */
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #888;
+    /* Lighter color for the heading */
+    margin-bottom: 10px;
+}
+
+.text-center {
+    text-align: center;
+    color: #777;
+    font-family: monospace;
+}
+
+/* Controls container - existing but perhaps adjust padding/margin */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    /* Space between controls and piano */
+    width: 100%;
+    /* Take full width of parent (body) */
+    max-width: 700px;
+    /* Limit max width for desktop */
+    box-sizing: border-box;
+    color: #777;
+}
+
+/* NEW: Flexbox container for side-by-side groups */
+.control-panel {
+    display: flex;
+    /* Enable flexbox */
+    justify-content: space-around;
+    /* Distribute space evenly between and around items */
+    align-items: flex-start;
+    /* Align items to the top if they have different heights */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line on smaller screens */
+    gap: 30px;
+    /* Space between the two columns */
+    padding: 10px 0;
+    /* Add a little vertical padding inside the panel */
+}
+
+/* Styling for each individual control group */
+.tuning-control-group,
+.instrument-control-group {
+    flex: 1;
+    /* Allows columns to grow and shrink proportionally */
+    min-width: 250px;
+    /* Minimum width before wrapping to ensure readability */
+    padding: 15px;
+    border: 1px solid #444;
+    /* Subtle border */
+    border-radius: 8px;
+    background-color: #282828;
+    /* Slightly darker background for the groups */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* Inner shadow */
+}
+
+/* Labels for the sections (e.g., "Select Base Tuning:") */
+.controls label {
+    display: block;
+    /* Ensures they take full width */
+    margin-bottom: 12px;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: #777;
+    /* Lighter color for labels */
+    text-align: center;
+    /* Center the main group labels */
+}
+
+/* Radio button labels (e.g., "Low 349.338 Hz") */
+.tuning-options label,
+.instrument-options label {
+    display: inline-block;
+    /* Keep label next to radio button */
+    font-weight: normal;
+    /* Override bold from parent label */
+    color: #ccc;
+    /* Lighter text color */
+    margin-bottom: 8px;
+    /* Space between radio button lines */
+    cursor: pointer;
+    /* Indicates it's clickable */
+}
+
+/* Radio button inputs */
+.tuning-options input[type="radio"],
+.instrument-options input[type="radio"] {
+    margin-right: 10px;
+    /* Space between radio button and its label text */
+    vertical-align: middle;
+    /* Align with text */
+    cursor: pointer;
+    accent-color: #777;
+    /* Accent color for the radio button */
+}
+
+/* Styling for the instrument selection dropdown */
+#instrumentSelect {
+    background-color: #333;
+    color: #f0f0f0;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+
+/* Current A4 Frequency display */
+.controls p {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #e0b04c;
+    /* Use gold for this important info */
+    text-align: center;
+    /* Center the frequency display */
+    font-weight: bold;
+}
+
+#piano-keys {
+    display: flex;
+    margin-bottom: 40px;
+    /* Space before footer */
+    /* ... existing piano key styles ... */
+}
+
+/* Add or adjust these as needed for your specific key sizes */
+.key {
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: background-color 0.1s ease, transform 0.05s ease;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align text to the bottom */
+    padding-bottom: 10px;
+    /* Space for the text from the bottom */
+    font-size: 0.9em;
+    user-select: none;
+    /* Prevent text selection */
+    box-sizing: border-box;
+    /* Include padding/border in element's total width/height */
+}
+
+.white-key {
+    background-color: #f0f0f0;
+    width: 55px;
+    /* Example width */
+    height: 160px;
+    /* Example height */
+    margin-right: 2px;
+    color: #333;
+    /* Dark text for white keys */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.black-key {
+    background-color: #333;
+    width: 40px;
+    /* Example width */
+    height: 110px;
+    /* Example height */
+    margin-left: -20px;
+    /* Overlap with white keys */
+    margin-right: -20px;
+    z-index: 1;
+    /* Ensure black keys are on top */
+    color: #f0f0f0;
+    /* Light text for black keys */
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.key.active {
+    background-color: #e0b04c;
+    /* Gold color when active */
+    transform: translateY(2px);
+    /* Slight press effect */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+
+    /* Even darker background for the footer */
+    border-top: 1px solid #444;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Mobile responsiveness: stack controls vertically */
+@media (max-width: 600px) {
+
+    /* Adjust overall controls padding for smaller screens */
+    .controls {
+        padding: 15px;
+        /* Slightly less padding for compact screens */
+    }
+
+    /* Change the flex direction of the control-panel to column */
+    .control-panel {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: stretch;
+        /* Make stacked items take full available width */
+        gap: 20px;
+        /* Adjust space between the stacked groups */
+    }
+
+    /* Make each control group take full width when stacked */
+    .tuning-control-group,
+    .instrument-control-group {
+        min-width: unset;
+        /* Remove the minimum width constraint */
+        width: 100%;
+        /* Take full width of its parent (control-panel) */
+        flex: none;
+        /* Disable flex shrinking/growing in this context */
+    }
+
+    /* Adjust heading margin for smaller screens if desired */
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    /* Adjust key sizes for better mobile tap target */
+    .white-key {
+        width: 50px;
+        /* Slightly narrower */
+        height: 180px;
+        /* Slightly shorter */
+    }
+
+    .black-key {
+        width: 35px;
+        /* Slightly narrower */
+        height: 100px;
+        /* Slightly shorter */
+        margin-left: -17px;
+        margin-right: -17px;
+    }
+
+    /* Adjust font size of key labels if they become too cramped */
+    .key {
+        font-size: 0.8em;
+    }
+}

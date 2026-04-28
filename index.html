@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Pl Protou Ke Byz Piano</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <h1>Pl Protou Ke Byz Piano</h1>
+
+  <div class="controls">
+    <div class="tuning-options">
+      <input type="radio" id="tuningLow" name="tuning" value="261.63" />Low
+
+      <input type="radio" id="tuningMedium-low" name="tuning" value="293.66" />Medium-low
+
+      <input type="radio" id="tuningMedium" name="tuning" value="329.63" checked />Medium
+
+      <input type="radio" id="tuningHigh" name="tuning" value="349.23" />High
+
+    </div>
+
+    <div class="current-frequency"><span id="current-frequency"></span> Hz</div>
+
+    <!-- NEW: Instrument Selection using <select> -->
+    <div class="instrument-select">
+      <select id="instrumentSelect">
+        <option value="flute">Ney / Flute</option>
+        <option value="trumpet">Trumpet</option>
+      </select>
+    </div>
+
+
+
+  </div>
+
+  <div class="container">
+
+    <div id="piano-keys"></div>
+    <!-- Piano keys will be generated here by JavaScript -->
+  </div>
+  <div class="text-center">[Γα --10-- Δι --12-- Κε --10-- Ζω' --8-- Νη' --12-- Πα' --12-- Βου']</div>
+  <footer>
+    <p>Designed by <strong>Rolan Tayarah</strong> &copy; 2025</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
