@@ -53,29 +53,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Manual tuning map for notes Bou-, Bou, Ga+ and Zw in Diatonik Mode 
     const manualTuningMap = {
-        "261.63": { // Low
+        /*"261.63": { // Low C4
             "Pa#4": 190.00,
             "Bou4": 192.44,
             "Ga#4": 215.88,
             "Zw4": 287.60
         },
-        "293.66": { // Medium-low
+        */
+        "293.66": { // Low D4
             "Pa#4": 213.00,
             "Bou4": 216.00,
             "Ga#4": 242.32,
             "Zw4": 323.30
         },
-        "329.63": { // Medium
+        "329.63": { // Medium-low E4
             "Pa#4": 238.00,
             "Bou4": 242.45,
             "Ga#4": 271.99,
             "Zw4": 363.25
         },
-        "349.23": { // High
+        "349.23": { // Medium F4
             "Pa#4": 251.00,
             "Bou4": 256.87,
             "Ga#4": 288.61,
             "Zw4": 384.87
+        },
+        "392.00": { // High G4
+            "Pa#4": 282.00,
+            "Bou4": 288.00,
+            "Ga#4": 324.00,
+            "Zw4": 432.00
         }
     };
 
