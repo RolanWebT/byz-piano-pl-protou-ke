@@ -51,22 +51,30 @@ document.addEventListener("DOMContentLoaded", () => {
         return greekName + primeSuffix;
     };
 
-    // Manual tuning map for notes Ga and Zw in Diatonik Mode 
+    // Manual tuning map for notes Bou-, Bou, Ga+ and Zw in Diatonik Mode 
     const manualTuningMap = {
         "261.63": { // Low
-            "Ga4": 215.88,
+            "Pa#4": 190.00,
+            "Bou4": 192.44,
+            "Ga#4": 215.88,
             "Zw4": 287.60
         },
         "293.66": { // Medium-low
-            "Ga4": 242.32,
+            "Pa#4": 213.00,
+            "Bou4": 216.00,
+            "Ga#4": 242.32,
             "Zw4": 323.30
         },
         "329.63": { // Medium
-            "Ga4": 271.99,
+            "Pa#4": 238.00,
+            "Bou4": 242.45,
+            "Ga#4": 271.99,
             "Zw4": 363.25
         },
         "349.23": { // High
-            "Ga4": 288.61,
+            "Pa#4": 251.00,
+            "Bou4": 256.87,
+            "Ga#4": 288.61,
             "Zw4": 384.87
         }
     };
@@ -165,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         stopAllNotes();
 
         // Changed range: F4 (Γα) to E5 (Βου)
-        generatePianoKeys("Ga", 4, "Bou", 5);
+        generatePianoKeys("Pa", 4, "Bou", 5);
 
     }
 
@@ -304,21 +312,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // The mapping is designed to match the keys of a piano, where each key corresponds to a specific note.
     // The keys 'a', 's', 'd', etc. correspond to notes Ga, Di, Ke, etc.
     const keyboardMap = {
-        c: "B3",
-        x: "A#3",
-        z: "A3",
-        a: "Ga4",
-        w: "Ga#4",
-        s: "Di4",
-        e: "Di#4",
-        d: "Ke4",
-        r: "Ke#4",
-        f: "Zw4",
-        g: "Ni5",
-        y: "Ni#5",
-        h: "Pa5",
-        u: "Pa#5",
-        j: "Bou5",
+        a: "Pa4",
+        w: "Pa#4",
+        s: "Bou4",
+        d: "Ga4",
+        r: "Ga#4",
+        f: "Di4",
+        g: "Ke4",
+        y: "Ke#4",
+        h: "Zw4",
+        j: "Ni5",
+        i: "Ni#5",
+        k: "Pa5",
+        o: "Pa#5",
+        l: "Bou5",
     };
 
     document.addEventListener("keydown", (event) => {

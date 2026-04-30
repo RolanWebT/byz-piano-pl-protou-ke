@@ -24,6 +24,7 @@ h1 {
     text-align: center;
     color: #777;
     font-family: monospace;
+    margin-bottom: 18px;
 }
 
 /* Controls container - existing but perhaps adjust padding/margin */
