@@ -334,6 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
         k: "Pa5",
         o: "Pa#5",
         l: "Bou5",
+        z: "Ke#4",
     };
 
     document.addEventListener("keydown", (event) => {
