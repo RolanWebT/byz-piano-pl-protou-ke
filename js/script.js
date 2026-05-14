@@ -325,6 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         d: "Ga4",
         r: "Ga#4",
         f: "Di4",
+        t: "Di#4",
         g: "Ke4",
         y: "Ke#4",
         h: "Zw4",
